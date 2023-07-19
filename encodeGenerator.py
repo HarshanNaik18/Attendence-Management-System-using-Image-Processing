@@ -12,6 +12,8 @@ firebase_admin.initialize_app(cred,{
     'storageBucket': 'attendance-management-sys-01.appspot.com'
 })
 
+bucket = storage.bucket()
+
 folderPath = 'images'
 PathList = os.listdir(folderPath)
 # print(PathList)
@@ -39,6 +41,7 @@ def findEncodings(imagesList):
     return encodeList
 
 
+
 print("Encoding started")
 encodeListKnown = findEncodings(imgList)
 encodeListKnownIds = [encodeListKnown, studentIds]
@@ -48,4 +51,3 @@ file = open("EncodeFile.p", "wb")
 pickle.dump(encodeListKnownIds, file)
 file.close()
 print("File saved")
-
