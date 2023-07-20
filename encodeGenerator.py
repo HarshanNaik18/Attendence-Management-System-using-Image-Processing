@@ -17,6 +17,8 @@ bucket = storage.bucket()
 folderPath = 'images'
 PathList = os.listdir(folderPath)
 # print(PathList)
+
+
 imgList = []
 studentIds = []
 for path in PathList:
