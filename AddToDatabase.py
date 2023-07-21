@@ -24,7 +24,7 @@ for path in PathList:
     blob.make_public()
     imgList.append(blob.public_url)
 
-print(imgList)
+# print(imgList)
 
 db = firestore.client()
 
@@ -34,7 +34,33 @@ data = {
         "Name": "Aishwarya N",
         "Branch": "ISE",
         "Sem": 4,
-        "Attendance_Count": 15,
+        "Attendance":{
+            "MATHS":{
+                "Attended":7,
+                "Total":10,
+                "Percentage":70
+            },
+            "MES":{
+                "Attended":8,
+                "Total":10,
+                "Percentage":80
+            },
+            "DAA":{
+                "Attended":6,
+                "Total":10,
+                "Percentage":60
+            },
+            "DBMS":{
+                "Attended":10,
+                "Total":10,
+                "Percentage":100
+            },
+            "APA":{
+                "Attended":7,
+                "Total":7,
+                "Percentage":100
+            },
+        },
         "Img":imgList[0]
     },
     "21005": {
@@ -42,7 +68,33 @@ data = {
         "Name": "Akshay Cavale",
         "Branch": "ISE",
         "Sem": 4,
-        "Attendance_Count": 10,
+        "Attendance":{
+            "MATHS":{
+                "Attended":7,
+                "Total":10,
+                "Percentage":70
+            },
+            "MES":{
+                "Attended":8,
+                "Total":10,
+                "Percentage":80
+            },
+            "DAA":{
+                "Attended":6,
+                "Total":10,
+                "Percentage":60
+            },
+            "DBMS":{
+                "Attended":10,
+                "Total":10,
+                "Percentage":100
+            },
+            "APA":{
+                "Attended":7,
+                "Total":7,
+                "Percentage":100
+            },
+        },
         "Img":imgList[1]
     },
     "21027": {
@@ -50,7 +102,33 @@ data = {
         "Name": "Harshan Naik",
         "Branch": "ISE",
         "Sem": 4,
-        "Attendance_Count": 20,
+        "Attendance":{
+            "MATHS":{
+                "Attended":7,
+                "Total":10,
+                "Percentage":70
+            },
+            "MES":{
+                "Attended":8,
+                "Total":10,
+                "Percentage":80
+            },
+            "DAA":{
+                "Attended":6,
+                "Total":10,
+                "Percentage":60
+            },
+            "DBMS":{
+                "Attended":10,
+                "Total":10,
+                "Percentage":100
+            },
+            "APA":{
+                "Attended":7,
+                "Total":7,
+                "Percentage":100
+            },
+        },
         "Img":imgList[2]
     }
 }
