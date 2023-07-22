@@ -20,7 +20,7 @@ studentData = dict()
 for doc in docs:
     studentData[doc.id] = doc.to_dict()
 
-print("Fetched data from databse\n\n")
+print("Fetched data from databse\n")
 
 # Class details
 AllCourses = ["MATHS","MES","DAA","DBMS","APA"]
@@ -48,7 +48,7 @@ encodeListKnownIds = pickle.load(file)
 file.close()
 
 encodeListKnown, studentIds = encodeListKnownIds
-print("Encode file Loaded\n\n")
+print("Encode file Loaded\n")
 
 
 flag = False
@@ -80,7 +80,7 @@ while True:
                     print(studentData[studentIds[matchIndex]])
                     attendance[studentIds[matchIndex]]["Status"] = True
                 else :
-                    print(studentData[studentIds[matchIndex]]["Name"] ," Attendance already marked\n")
+                    print(studentData[studentIds[matchIndex]]["Name"] ," your Attendance is already marked\n")
                 
         cv2.imshow("Attendance System", img)
         cv2.waitKey(1)
@@ -105,6 +105,7 @@ if(flag):
             studentData[key]["Attendance"][course]["Attended"] = Attended
             studentData[key]["Attendance"][course]["Total"] = Total
             studentData[key]["Attendance"][course]["Percentage"] = Percentage
+
             studentRef.document(key).update({"Attendance":studentData[key]["Attendance"]})
 
         else:
