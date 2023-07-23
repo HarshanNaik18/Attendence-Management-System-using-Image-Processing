@@ -12,9 +12,11 @@ cred = credentials.Certificate("FirebaseKeys.json")
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
-print("Fetching data from database")
 studentRef = db.collection("students")
+
+print("Fetching data from database")
 docs = studentRef.stream()
+
 studentData = dict()
 
 for doc in docs:
@@ -38,7 +40,6 @@ for key, value in studentData.items():
         "Status" : False
     }
     attendance[key]=info
-
 
 
 print("Loading encode file")
@@ -87,6 +88,7 @@ while True:
 
     else:
         break
+
 if(flag):
     present_count = 0
     absent_count = 0
