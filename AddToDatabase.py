@@ -29,110 +29,114 @@ for path in PathList:
 db = firestore.client()
 
 data = {
-    "21003": {
+    "1BG21IS003": {
         "usn": '1BG21IS003',
         "Name": "Aishwarya N",
         "Branch": "ISE",
         "Sem": 4,
         "Attendance":{
             "MATHS":{
-                "Attended":7,
-                "Total":10,
-                "Percentage":70
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "MES":{
-                "Attended":8,
-                "Total":10,
-                "Percentage":80
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "DAA":{
-                "Attended":6,
-                "Total":10,
-                "Percentage":60
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "DBMS":{
-                "Attended":10,
-                "Total":10,
-                "Percentage":100
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "APA":{
-                "Attended":7,
-                "Total":7,
-                "Percentage":100
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
         },
         "Img":imgList[0]
     },
-    "21005": {
+    "1BG21IS005": {
         "usn": '1BG21IS005',
         "Name": "Akshay Cavale",
         "Branch": "ISE",
         "Sem": 4,
         "Attendance":{
             "MATHS":{
-                "Attended":7,
-                "Total":10,
-                "Percentage":70
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "MES":{
-                "Attended":8,
-                "Total":10,
-                "Percentage":80
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "DAA":{
-                "Attended":6,
-                "Total":10,
-                "Percentage":60
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "DBMS":{
-                "Attended":10,
-                "Total":10,
-                "Percentage":100
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "APA":{
-                "Attended":7,
-                "Total":7,
-                "Percentage":100
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
         },
         "Img":imgList[1]
     },
-    "21027": {
+    "1BG21IS027": {
         "usn": '1BG21IS027',
         "Name": "Harshan Naik",
         "Branch": "ISE",
         "Sem": 4,
         "Attendance":{
             "MATHS":{
-                "Attended":7,
-                "Total":10,
-                "Percentage":70
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "MES":{
-                "Attended":8,
-                "Total":10,
-                "Percentage":80
+                "Attended":0,
+                "Total":0,
+                "Percentage":00
             },
             "DAA":{
-                "Attended":6,
-                "Total":10,
-                "Percentage":60
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "DBMS":{
-                "Attended":10,
-                "Total":10,
-                "Percentage":100
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
             "APA":{
-                "Attended":7,
-                "Total":7,
-                "Percentage":100
+                "Attended":0,
+                "Total":0,
+                "Percentage":0
             },
         },
         "Img":imgList[2]
     }
 }
 
+print("Uploading student data to database")
+
 for key, item in data.items():
     studentRef = db.collection("students").document(key)
     studentRef.set(item)
+
+print("Uploaded to database")

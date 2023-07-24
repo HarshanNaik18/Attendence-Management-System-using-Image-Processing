@@ -29,7 +29,7 @@ AllCourses = ["MATHS","MES","DAA","DBMS","APA"]
 
 course = AllCourses[4]
 class_starting_time = datetime(2023, 7, 22, 0, 0)
-class_ending_time = datetime(2023, 7, 22, 00, 57, 00)
+class_ending_time = datetime(2023, 7, 25, 1, 8, 50)
 
 attendance = dict()
 
@@ -37,7 +37,7 @@ for key, value in studentData.items():
     info = {
         "Name": value["Name"],
         "usn": value["usn"],
-        "Status" : False
+        "Status" : "Absent"
     }
     attendance[key]=info
 
@@ -77,9 +77,9 @@ while True:
                 y1, x2, y2, x1 = y1*4, x2*4, y2*4, x1*4
                 bbox = x1, y1, x2-x1, y2-y1
                 cvzone.cornerRect(img, bbox, rt=0)
-                if attendance[studentIds[matchIndex]]["Status"] == False:
+                if attendance[studentIds[matchIndex]]["Status"] == "Absent":
                     print(studentData[studentIds[matchIndex]])
-                    attendance[studentIds[matchIndex]]["Status"] = True
+                    attendance[studentIds[matchIndex]]["Status"] = "Present"
                 else :
                     print(studentData[studentIds[matchIndex]]["Name"] ," your Attendance is already marked\n")
                 
@@ -96,7 +96,7 @@ if(flag):
     print("Updating database")
     for key, value in attendance.items():
         
-        if value["Status"]:
+        if value["Status"] == "Present":
             present_count += 1
 
             Attended = studentData[key]["Attendance"][course]["Attended"] + 1
