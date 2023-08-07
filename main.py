@@ -27,9 +27,9 @@ print("Fetched data from databse\n")
 # Class details
 AllCourses = ["MATHS","MES","DAA","DBMS","APA"]
 
-course = AllCourses[4]
-class_starting_time = datetime(2023, 7, 22, 0, 0)
-class_ending_time = datetime(2023, 7, 25, 1, 8, 50)
+course = AllCourses[1]
+class_starting_time = datetime(2023, 7, 25, 10, 0)
+class_ending_time = datetime(2023, 8, 7, 21, 31, 40)
 
 attendance = dict()
 
