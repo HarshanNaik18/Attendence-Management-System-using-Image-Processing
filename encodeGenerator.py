@@ -7,6 +7,7 @@ from firebase_admin import credentials
 from firebase_admin import storage
 import urllib.request
 
+
 def connect(host='http://google.com'):
     try:
         urllib.request.urlopen(host)
@@ -14,18 +15,19 @@ def connect(host='http://google.com'):
     except:
         return False
 
+
 connection = connect()
 counter = 0
 while not connection:
-    if counter%20000 == 0:
+    if counter % 20000 == 0:
         print("Please connect internet")
     connection = connect()
     counter = counter + 1
 
-print( "connected")
+print("connected")
 
 cred = credentials.Certificate("FirebaseKeys.json")
-firebase_admin.initialize_app(cred,{
+firebase_admin.initialize_app(cred, {
     'storageBucket': 'attendance-management-sys-01.appspot.com'
 })
 
@@ -58,7 +60,6 @@ def findEncodings(imagesList):
         encodeList.append(encode)
 
     return encodeList
-
 
 
 print("Encoding started")

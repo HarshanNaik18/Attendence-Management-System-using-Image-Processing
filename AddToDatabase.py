@@ -5,6 +5,7 @@ from firebase_admin import storage
 import os
 import urllib.request
 
+
 def connect(host='http://google.com'):
     try:
         urllib.request.urlopen(host)
@@ -12,18 +13,19 @@ def connect(host='http://google.com'):
     except:
         return False
 
+
 connection = connect()
 counter = 0
 while not connection:
-    if counter%20000 == 0:
+    if counter % 20000 == 0:
         print("Please connect internet")
     connection = connect()
     counter = counter + 1
 
-print( "connected")
+print("connected")
 
 cred = credentials.Certificate("FirebaseKeys.json")
-firebase_admin.initialize_app(cred,{
+firebase_admin.initialize_app(cred, {
     'storageBucket': 'attendance-management-sys-01.appspot.com'
 })
 
@@ -52,102 +54,102 @@ data = {
         "Name": "Aishwarya N",
         "Branch": "ISE",
         "Sem": 4,
-        "Attendance":{
-            "MATHS":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+        "Attendance": {
+            "MATHS": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "MES":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "MES": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "DAA":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "DAA": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "DBMS":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "DBMS": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "APA":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "APA": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
         },
-        "Img":imgList[0]
+        "Img": imgList[0]
     },
     "1BG21IS005": {
         "usn": '1BG21IS005',
         "Name": "Akshay Cavale",
         "Branch": "ISE",
         "Sem": 4,
-        "Attendance":{
-            "MATHS":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+        "Attendance": {
+            "MATHS": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "MES":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "MES": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "DAA":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "DAA": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "DBMS":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "DBMS": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "APA":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "APA": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
         },
-        "Img":imgList[1]
+        "Img": imgList[1]
     },
     "1BG21IS027": {
         "usn": '1BG21IS027',
         "Name": "Harshan Naik",
         "Branch": "ISE",
         "Sem": 4,
-        "Attendance":{
-            "MATHS":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+        "Attendance": {
+            "MATHS": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "MES":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":00
+            "MES": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 00
             },
-            "DAA":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "DAA": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "DBMS":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "DBMS": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
-            "APA":{
-                "Attended":0,
-                "Total":0,
-                "Percentage":0
+            "APA": {
+                "Attended": 0,
+                "Total": 0,
+                "Percentage": 0
             },
         },
-        "Img":imgList[2]
+        "Img": imgList[2]
     }
 }
 
