@@ -3,6 +3,24 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from firebase_admin import storage
 import os
+import urllib.request
+
+def connect(host='http://google.com'):
+    try:
+        urllib.request.urlopen(host)
+        return True
+    except:
+        return False
+
+connection = connect()
+counter = 0
+while not connection:
+    if counter%20000 == 0:
+        print("Please connect internet")
+    connection = connect()
+    counter = counter + 1
+
+print( "connected")
 
 cred = credentials.Certificate("FirebaseKeys.json")
 firebase_admin.initialize_app(cred,{

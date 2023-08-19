@@ -7,6 +7,24 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from datetime import datetime
+import urllib.request
+
+def connect(host='http://google.com'):
+    try:
+        urllib.request.urlopen(host)
+        return True
+    except:
+        return False
+
+connection = connect()
+counter = 0
+while not connection:
+    if counter%20000 == 0:
+        print("Please connect internet")
+    connection = connect()
+    counter = counter + 1
+
+print( "connected")
 
 cred = credentials.Certificate("FirebaseKeys.json")
 firebase_admin.initialize_app(cred)
@@ -29,7 +47,7 @@ AllCourses = ["MATHS","MES","DAA","DBMS","APA"]
 
 course = AllCourses[1]
 class_starting_time = datetime(2023, 7, 25, 10, 0)
-class_ending_time = datetime(2023, 8, 7, 21, 31, 40)
+class_ending_time = datetime(2023, 8, 7, 23, 00, 40)
 
 attendance = dict()
 
